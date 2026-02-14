@@ -6,6 +6,7 @@ const path = require("path");
 const methodOverride = require("method-override");
 const ejsmate = require("ejs-mate");
 const session = require("express-session");
+const MongoStore = require('connect-mongo');
 const cookieParser = require("cookie-parser");
 const flash = require("connect-flash");
 const passport = require("passport");
@@ -33,21 +34,29 @@ app.engine("ejs", ejsmate);
 app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "views"));
 
- 
- 
+const store = MongoStore.create({
+  mongoUrl :  process.env.MONGO_URL,
+  crypto:{
+    secret :  process.env.SESSION_SECRET,
+  },
+  touchAfter :24*3600,
+});
+store.on("error",()=>{
+  console.log("Error in the storage ", err);
+})
 
-app.use(
-  session({
-    secret: process.env.SESSION_SECRET || "secret",
+const sessionOption = {
+    store,
+    secret: process.env.SESSION_SECRET,
     resave: false,
     saveUninitialized: false,
     cookie: {
       maxAge: 7 * 24 * 60 * 60 * 1000, // 7 days
       httpOnly: true,
     },
-  })
-);
-
+  }
+app.use(session(sessionOption));
+app.use(flash());
 // Passport config
 app.use(passport.initialize());
 app.use(passport.session());
