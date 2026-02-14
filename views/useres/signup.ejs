@@ -1,0 +1,75 @@
+<% layout("/layout/boilerplate") %>
+
+<div class="container mt-5">
+  <div class="row justify-content-center">
+    <div class="col-md-6 col-lg-5">
+
+      <div class="card shadow-lg border-0 rounded-4">
+        <div class="card-body p-4">
+
+          <h2 class="text-center mb-4 fw-bold">Create Account</h2>
+
+          <form action="/signup" method="POST">
+
+            <!-- Username -->
+            <div class="mb-3">
+              <label for="username" class="form-label fw-semibold">Username</label>
+              <input 
+                type="text" 
+                class="form-control rounded-3" 
+                id="username" 
+                name="username"
+                placeholder="Enter your username" 
+                required
+              >
+            </div>
+
+            <!-- Email -->
+            <div class="mb-3">
+              <label for="email" class="form-label fw-semibold">Email</label>
+              <input 
+                type="email" 
+                class="form-control rounded-3" 
+                id="email" 
+                name="email"
+                placeholder="Enter your email"
+                required
+              >
+            </div>
+
+            <!-- Password -->
+            <div class="mb-3">
+              <label for="password" class="form-label fw-semibold">Password</label>
+              <input 
+                type="password" 
+                class="form-control rounded-3" 
+                id="password" 
+                name="password"
+                placeholder="Enter your password" 
+                required
+              >
+            </div>
+
+            <!-- Submit Button -->
+            <div class="d-grid">
+              <button type="submit" class="btn btn-outline-danger search-btn rounded-3 ">
+                Sign Up
+              </button>
+            </div>
+
+          </form>
+
+          <!-- Login Link -->
+          <div class="text-center mt-3">
+            <small>
+              Already have an account?
+              <a href="/login" class="text-decoration-none fw-semibold">Login</a>
+            </small>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>

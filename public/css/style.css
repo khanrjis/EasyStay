@@ -1,0 +1,239 @@
+html, body {
+  height: 100% !important;
+  margin: 0 !important;
+}
+
+body {
+  display: flex !important;
+  flex-direction: column !important;
+}
+.container {
+    flex: 1  !important;
+}
+/*Navbar*/
+.navbar {
+    height: 4rem;
+    background-color: #ffffff;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.06);
+}
+
+.nav-link {
+    color: #111 !important;
+    font-weight: 500;
+    margin-right: 0.8rem;
+    transition: color 0.2s ease;
+}
+
+.nav-link:hover {
+    color: #dc3545 !important;
+}
+
+/*Footer*/
+footer {
+  margin-top: auto !important;
+}
+.f-info {
+    background-color: #f3f3f3;
+    padding: 1.8rem 0;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    text-align: center;
+    font-size: 0.95rem;
+}
+
+/* Footer links */
+.f-info-links {
+    width: 100%;
+}
+
+.f-info-links a {
+    text-decoration: none;
+    color: #222 !important;
+    margin: 0 0.7rem;
+    font-weight: 500;
+    position: relative;
+}
+
+/* underline animation */
+.f-info-links a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -3px;
+    width: 0%;
+    height: 2px;
+    background-color: #dc3545;
+    transition: width 0.3s ease;
+}
+
+.f-info-links a:hover::after {
+    width: 100%;
+}
+
+/* Social icons */
+.f-info-spcial {
+    font-size: 1.9rem;
+    display: flex;
+    justify-content: center;
+    gap: 1.6rem;
+}
+
+.f-info-spcial i {
+    cursor: pointer;
+    color: #333;
+    transition: transform 0.25s ease, color 0.25s ease;
+}
+
+.f-info-spcial i:hover {
+    transform: translateY(-4px) scale(1.15);
+    color: #dc3545;
+}
+
+/* Copyright */
+.f-info p {
+    margin: 0;
+    color: #666;
+    font-size: 0.85rem;
+}
+
+/*Listings Card*/
+.listing-card {
+    border: none;
+    border-radius: 14px;
+    overflow: hidden;
+    background: #fff;
+    box-shadow: 0 8px 22px rgba(0,0,0,0.12);
+    transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+.listing-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 16px 36px rgba(0,0,0,0.2);
+}
+
+/* Card image */
+.listing-card img {
+    height: 230px;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+.listing-card:hover img {
+    transform: scale(1.05);
+}
+
+/* Card body */
+.card-body {
+    padding: 1.1rem 1.2rem;
+}
+
+/* Title */
+.card-title {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #1f1f1f;
+    margin-bottom: 0.4rem;
+}
+
+/* Price */
+.card-price {
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: #000;
+}
+
+.card-price span {
+    font-size: 0.9rem;
+    color: #777;
+    font-weight: 400;
+}
+
+/*Responsiveness*/
+@media (max-width: 576px) {
+    .listing-card img {
+        height: 185px;
+    }
+
+    .nav-link {
+        margin-right: 0;
+    }
+}
+.add-btn  {
+    background-color: #dc3545 !important;
+    border-color: #dc3545 !important;   
+}
+.create {
+    color: #dc3545 !important;
+    font-style: italic;
+}
+
+.logo{
+    color: #dc3545 !important;
+}
+
+.edit-logo{
+    color: #dc3545 !important;
+    font-style: italic;
+}
+
+.update-logo {
+    background-color: #dc3545 !important;
+    border-color: #dc3545 !important;   
+}
+
+/*navbar logo desgin*/
+.filters{
+    display :flex;
+    flex-wrap : wrap;
+}
+.filter{
+    text-align :center;
+    margin-right:3rem;
+    margin-bottom:1rem;
+    opacity : 0.73;
+
+}
+.filter:hover{
+    opacity : 1;
+    cursor:pointer;
+}
+.filters p {
+    font-size:0.90rem;
+}
+
+.auth-btn:hover {
+    opacity: 0.85;
+    transform: translateY(-2px);
+    transition: all 0.2s ease-in-out;
+  }
+.btn-sea{
+  border:none;
+}
+  .search-btn:hover {
+    background-color: #d33535;  
+    color: #fff;
+    border-color: #d33535;
+  }
+
+  
+  .navbar-brand:hover {
+    color: #b71c1c; 
+    text-decoration: none;
+  }
+
+   
+  @media (max-width: 767px) {
+    .navbar-nav {
+      margin-top: 10px;
+    }
+    .d-flex {
+      flex-direction: column;
+      gap: 5px;
+    }
+  }
+
+  .search-input{
+    width: 520px;  
+    transition: all 0.2s ease-in-out;
+  } 

@@ -1,0 +1,84 @@
+<% layout("/layout/boilerplate") %>
+
+  <body>
+    <h2 class="create mb-4 text-center">Create New Listing</h2>
+
+    <div class="row">
+      <form action="/listings" method="POST" class="col-md-6 offset-md-3 needs-validation">
+
+        <!-- Title -->
+        <div class="mb-3">
+          <label class="form-label">Title</label>
+          <input type="text" name="title" class="form-control" placeholder="Enter title" required>
+          <div class="invalid-feedback">
+            Title is required
+          </div>
+        </div>
+
+        <!-- Image -->
+        <div class="mb-3">
+          <label class="form-label">Image URL</label>
+          <input type="text" name="image" class="form-control" placeholder="Enter image URL" defaultValue="https://source.unsplash.com/400x300/?house">
+          <div class="invalid-feedback">
+            Image URL is required
+          </div>
+        </div>
+
+        <!-- Description -->
+        <div class="mb-3">
+          <label class="form-label">Description</label>
+          <textarea name="description" class="form-control" placeholder="Enter detailed description" rows="4"
+            required></textarea>
+          <div class="invalid-feedback">
+            Description is required
+          </div>
+        </div>
+
+        <!-- Price + Country -->
+        <div class="row mb-3">
+          <div class="col-md-6">
+            <label class="form-label">Price</label>
+            <input type="number" name="price" class="form-control" placeholder="Enter price" min="0" required>
+            <div class="invalid-feedback">
+              Price is required
+            </div>
+          </div>
+
+          <div class="col-md-6">
+            <label class="form-label">Country</label>
+
+            <select name="country" class="form-control"  required>
+              <option value="India">India</option>
+              <option value="United States">United States</option>
+              <option value="United Kingdom">United Kingdom</option>
+              <option value="Canada">Canada</option>
+              <option value="Australia">Australia</option>
+              <option value="Germany">Germany</option>
+              <option value="France">France</option>
+              <option value="Dubai">Dubai</option>
+            </select>
+
+            <div class="invalid-feedback">
+              Country is required
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Location -->
+        <div class="mb-3">
+          <label class="form-label">Location</label>
+          <input type="text" name="location" class="form-control"
+            placeholder="Rajasthan, Jaipur, Maharashtra, Mumbai, etc." required>
+          <div class="invalid-feedback">
+            Location is required
+          </div>
+        </div>
+
+        <!-- Buttons -->
+        <button class="btn btn-dark add-btn">Create Listing</button>
+        <a href="/listings" class="btn btn-outline-dark ms-2">Back</a>
+        <br><br>
+      </form>
+    </div>
+  </body>

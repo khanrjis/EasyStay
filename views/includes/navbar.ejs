@@ -1,0 +1,42 @@
+<nav class="navbar navbar-expand-md navbar-light bg-light border-bottom sticky-top">
+  <div class="container-fluid">
+    <!-- Brand -->
+    <a class="navbar-brand text-danger fw-bold" href="/listings">EaseStay</a>
+
+    <!-- Toggler for mobile -->
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!-- Navbar links & search -->
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav me-auto mb-2 mb-md-0">
+        <li class="nav-item">
+          <a class="nav-link" href="/listings">Explore</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/listings/new">Add Listing</a>
+        </li>
+      </ul>
+
+      <!-- Search form -->
+      <form class="d-flex me-3" role="search">
+        <input class="search-input form-control me-2" type="search" placeholder="Search Destination" aria-label="Search" />
+        <button class="btn btn-outline-danger search-btn" type="submit">Search</button>
+      </form>
+
+      <!-- Authentication buttons -->
+      <div class="d-flex">
+        <% if (!currUser) { %>
+        <a href="/signup" class="btn-sea btn btn-outline-danger me-2 auth-btn"><b>Sign Up</b></a>
+        <a href="/login" class="btn-sea btn  btn-outline-danger auth-btn"><b>Login</b></a>
+        <% } else { %>
+        <a href="/logout" class="btn-sea btn btn-outline-danger auth-btn"><b>Logout</b></a>
+        <% } %>
+      </div>
+    </div>
+  </div>
+</nav>
+
+  
